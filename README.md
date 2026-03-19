@@ -24,7 +24,7 @@ TFRecon is a lightweight reconnaissance tool written in Python that combines:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/TFRecon.git
+git clone https://github.com/SalmanAlotaibi22/TFRecon.git
 cd TFRecon
 ```
 
