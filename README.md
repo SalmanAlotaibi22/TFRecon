@@ -1,90 +1,144 @@
-TFRecon
+# ⚡ TFRecon
 
 TFRecon is a lightweight reconnaissance tool written in Python that combines:
 
-Subdomain discovery
+- 🔍 Subdomain discovery  
+- 🌐 DNS resolution  
+- 🚪 Port scanning  
+- 🧠 Service & version detection  
 
-DNS resolution
+---
 
-Port scanning
-Service and basic version detection
+## 🚀 Features
 
-📦 Installation
-1. Clone the repository
-git clone https://github.com/SalmanAlotaibi22/TFRecon.git
+- Subdomain enumeration using crt.sh
+- Fast multi-threaded port scanning
+- Service detection with basic version grabbing
+- Clean and simple CLI interface
+- Save results to file
+
+---
+
+## 🛠 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/TFRecon.git
 cd TFRecon
-2. Install requirements
+```
+
+---
+
+### 2. Install dependencies
+
+```bash
 pip install requests
-3. Run the tool
+```
+
+---
+
+### 3. Run the tool
+
+```bash
 python tfrecon.py -h
-⚙️ Usage
+```
+
+---
+
+## 📌 Usage
 
 TFRecon has 3 main modes:
 
-enum → Subdomain enumeration
+| Mode  | Description |
+|------|------------|
+| enum | Subdomain enumeration |
+| scan | Port scanning |
+| full | Full recon (subdomains + port scan) |
 
-scan → Port scanning
+---
 
-full → Full recon (enum + scan)
+## 🔎 Subdomain Enumeration
 
-🔍 1. Subdomain Enumeration
-
-Basic usage:
-
+```bash
 python tfrecon.py enum -d example.com
+```
 
-Without DNS resolving:
+Skip DNS resolving:
 
+```bash
 python tfrecon.py enum -d example.com --no-resolve
+```
 
-With custom threads:
+Save output:
 
-python tfrecon.py enum -d example.com -t 50
-🌐 2. Port Scanning
+```bash
+python tfrecon.py enum -d example.com -o subs.txt
+```
+
+---
+
+## 🚪 Port Scanning
 
 Scan common ports:
 
+```bash
 python tfrecon.py scan -T example.com --top
-
-Scan default ports (1–1024):
-
-python tfrecon.py scan -T example.com
+```
 
 Scan specific ports:
 
+```bash
 python tfrecon.py scan -T example.com -p 80,443,8080
+```
 
 Scan port range:
 
+```bash
 python tfrecon.py scan -T example.com -p 1-1000
+```
 
-Adjust threads:
+---
 
-python tfrecon.py scan -T example.com --top -t 200
-⚡ 3. Full Recon (Subdomains + Scan)
+## ⚔️ Full Recon (Recommended)
+
+Enumerate subdomains and scan them:
+
+```bash
 python tfrecon.py full -d example.com --top
+```
 
-Custom ports:
+---
 
-python tfrecon.py full -d example.com -p 80,443,8080
-💾 Save Output
+## 💾 Save Results
 
-Save results to file:
-
+```bash
 python tfrecon.py full -d example.com --top -o results.txt
-🧠 Example Output
-[+] api.example.com        -> 192.168.1.10
-[+] Port 80 open           Service: http | nginx/1.18.0
-[+] Port 22 open           Service: ssh | OpenSSH_8.2
-⚠️ Notes
+```
 
-Version detection is basic and depends on service responses
+---
 
-Some services do not expose version information
+## 🧪 Example Output
 
-Results may vary depending on target configuration
+```bash
+[*] Scanning target: example.com
 
-⚖️ Disclaimer
+[+] Port 80    open   Service: http | Apache/2.4.41
+[+] Port 443   open   Service: https | nginx/1.18.0
+[+] Port 22    open   Service: ssh | OpenSSH_7.9
+```
 
-This tool is intended for educational purposes and authorized testing only.
-Do not scan or test systems without permission.
+---
+
+## ⚙️ Requirements
+
+- Python 3.8+
+- requests
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is intended for educational and authorized security testing purposes only.
+
+You are responsible for how you use it.
