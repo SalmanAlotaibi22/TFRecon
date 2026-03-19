@@ -11,7 +11,7 @@ Service and basic version detection
 
 📦 Installation
 1. Clone the repository
-git clone 
+git clone https://github.com/SalmanAlotaibi22/TFRecon.git
 cd TFRecon
 2. Install requirements
 pip install requests
