@@ -7,7 +7,6 @@ Subdomain discovery
 DNS resolution
 
 Port scanning
-
 Service and basic version detection
 
 📦 Installation
